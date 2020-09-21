@@ -1,0 +1,82 @@
+<html>
+  <body>
+<h1 align="center">Welcome To Home</h1>
+
+<br> <div class="topnav" style="margin:10px">
+  
+
+  <div class="topnav" >
+
+
+  <table class="table" style="text-align: center;">
+      
+          <td><h2>{{uname}}</h2></td>
+        
+          
+    
+    </table>
+    
+  </div>
+</div>
+<!-- <div *ngFor="let det of details ">
+  <img width="300px" height="150px"  style=" margin-left: 250px;" [src]="det.image_link">
+ 
+  
+</div> -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-left:500px; float: left;display:table;">
+  <ng-container matColumnDef="imageUrl">
+    <th mat-header-cell *matHeaderCellDef> <h5 style="color:blue;">IMAGE THROUGH MATERIAL DESIGN</h5> </th>
+    <td mat-cell *matCellDef="let element"> <img [src]="element.imageUrl" style="width: 350px; height: 170px; "/> </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+
+
+  <div class="sidenav" style="margin-top:115px ;margin-left: 5px; text-align:center"  >
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+    <button class="dropdown-btn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+    <a href="#contact">Search</a>
+
+
+    <!-- <button (click)=showdetails() class="btn btn-primary" style="margin-right: 60px;  margin-top: 10px">API DATA</button>
+     -->
+  </div>
+  
+ 
+  <script>
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+  
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }
+  </script>
+ 
+  
+  </body>
+</html>
+  
+  
+
